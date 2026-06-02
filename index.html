@@ -147,6 +147,48 @@
         .animate-marquee:hover {
             animation-play-state: paused;
         }
+
+        /* Custom Premium Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        
+        .reveal-fade-up {
+            transform: translateY(30px);
+        }
+        
+        .reveal-fade-left {
+            transform: translateX(-30px);
+        }
+        
+        .reveal-fade-right {
+            transform: translateX(30px);
+        }
+
+        .reveal-active {
+            opacity: 1 !important;
+            transform: translate(0, 0) !important;
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
     </style>
 </head>
 
@@ -192,33 +234,33 @@
                 class="relative z-10 max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
                 <div class="md:col-span-7 py-xl">
                     <div
-                        class="inline-block bg-primary-container text-on-primary-container px-sm py-1 font-label-lg rounded-sm mb-md uppercase tracking-wider">
+                        class="reveal-on-scroll reveal-fade-up inline-block bg-primary-container text-on-primary-container px-sm py-1 font-label-lg rounded-sm mb-md uppercase tracking-wider">
                         Leadership for a New Indore
                     </div>
-                    <h1 class="font-display-lg text-display-lg text-on-background mb-md leading-tight">
+                    <h1 class="reveal-on-scroll reveal-fade-up delay-100 font-display-lg text-display-lg text-on-background mb-md leading-tight">
                         इंदौर की सेवा, आधुनिक विकास, और <span class="text-primary italic">जन भागीदारी।</span>
                     </h1>
-                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-lg">
+                    <p class="reveal-on-scroll reveal-fade-up delay-200 font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-lg">
                         From a dedicated advocate in the High Court to the Mayor of India’s Cleanest City. Building a
                         cleaner, smarter, and greener Indore together with its 30+ lakh citizens.
                     </p>
-                    <div class="flex flex-wrap gap-md">
+                    <div class="reveal-on-scroll reveal-fade-up delay-300 flex flex-wrap gap-md">
                         <button
-                            class="bg-primary-container text-on-primary-container px-lg py-sm font-label-lg rounded transition-all saffron-glow hover:translate-x-1 hover:translate-y-1">
+                            class="bg-primary-container text-on-primary-container px-lg py-sm font-label-lg rounded transition-all saffron-glow hover:scale-105 hover:-translate-y-1 active:translate-y-0 active:scale-100">
                             मुझसे जुड़ें / Connect with Me
                         </button>
                         <button
-                            class="border-2 border-on-surface-variant text-on-surface-variant px-lg py-sm font-label-lg rounded hover:bg-surface-container transition-all">
+                            class="border-2 border-on-surface-variant text-on-surface-variant px-lg py-sm font-label-lg rounded hover:bg-surface-container hover:-translate-y-1 transition-all active:translate-y-0">
                             Explore Initiatives
                         </button>
                     </div>
                 </div>
-                <div class="md:col-span-5 relative">
-                    <div class="relative z-10 saffron-glow border-2 border-white">
-                        <img alt="Pushyamitra Bhargav Portrait" class="w-full h-auto  transition-all duration-700"
+                <div class="md:col-span-5 relative reveal-on-scroll reveal-fade-right delay-200">
+                    <div class="relative z-10 saffron-glow border-2 border-white overflow-hidden group">
+                        <img alt="Pushyamitra Bhargav Portrait" class="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWSjHFJ-rX7J22wm293wsfWXYxB7NrDQa6QTQX_UxLtCYD9HApt9-v0wadPxhiYmghJrnOXsXi1XyBMGUM-8jbD1guyh1w1t5d544lyzuRpdzOLRitnSSLsCRxEyHbZZY6TZ9tdRJXp0q7ADihSS5Z7Ldyw6humvmX6swCZUISl__uSg76Ra16-7Da6bdSSK-klKv5klc9sM9Tz2WOm2sS7sGU6GKmjqXID4K9tuizzUyi2fM3OPpJMv1jo0FiN71iSgw1nHLGvVg" />
                     </div>
-                    <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-primary-container -z-10 opacity-30"></div>
+                    <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-primary-container -z-10 opacity-30 animate-float"></div>
                 </div>
             </div>
         </section>
@@ -227,7 +269,7 @@
             id="journey">
             <div class="max-w-container-max mx-auto px-gutter">
                 <!-- Section Header -->
-                <div class="mb-xl text-center">
+                <div class="mb-xl text-center reveal-on-scroll reveal-fade-up">
                     <h2 class="font-headline-lg text-headline-lg text-primary mb-sm">इंदौर का बेटा: शिक्षा, संगठन और
                         सेवा का सफर</h2>
                     <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto italic">
@@ -239,7 +281,7 @@
                 <!-- Row 1: THE FOUNDATION & STUDENT ROOTS -->
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center py-lg border-b border-surface-container">
-                    <div class="order-1">
+                    <div class="order-1 reveal-on-scroll reveal-fade-left">
                         <span class="font-label-lg text-primary uppercase tracking-widest mb-sm block">The Foundation
                             &amp; Student Roots</span>
                         <p class="font-body-lg text-on-surface mb-md">
@@ -262,13 +304,13 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="order-2 relative">
+                    <div class="order-2 relative reveal-on-scroll reveal-fade-right">
                         <div
                             class="aspect-square bg-surface-container rounded-full overflow-hidden opacity-10 absolute inset-0 mandala-pattern">
                         </div>
-                        <div class="relative z-10 p-md">
+                        <div class="relative z-10 p-md group">
                             <img alt="Indore Foundation"
-                                class="w-full h-auto rounded-xl navy-outline shadow-sm transition-all"
+                                class="w-full h-auto rounded-xl navy-outline shadow-sm transition-all duration-500 group-hover:scale-105 group-hover:shadow-md"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWd5pOhzKJ8Gmn4ZLc9ZV-js3ViBWp1Y0EU-Ccu7J83w9vhS0xzu8GcormlvO1GMKKPRyzEWxGOPphXQ0U0lcpw8_24Msmfx2ZfVkuH_ZXQhifW_EItDJtT7dv8375mow0Vel7ROtgpa-BqLloK5F5joO6i2QHUQmSqu3pbEbaVfbJ8mjmKbr5TNAWEcWtH7DqN5oGsQASP_ZYYX8rkPIpqJ-M3KjeBIEyPQTJwmKaeXrdmyax4r2Zc-g2fHfI1h8OtrQLBR4J9rg" />
 
 
@@ -278,15 +320,15 @@
                 <!-- Row 2: PROFESSIONAL EXCELLENCE -->
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center py-lg border-b border-surface-container">
-                    <div class="order-2 md:order-1">
-                        <div class="relative max-w-sm mx-auto">
-                            <div class="absolute inset-0 bg-primary-container -rotate-3 rounded-lg opacity-20"></div>
+                    <div class="order-2 md:order-1 reveal-on-scroll reveal-fade-left">
+                        <div class="relative max-w-sm mx-auto group">
+                            <div class="absolute inset-0 bg-primary-container -rotate-3 rounded-lg opacity-20 transition-transform duration-500 group-hover:rotate-0"></div>
                             <img alt="Professional Portrait"
-                                class="relative z-10 w-full h-auto rounded-lg shadow-lg border-2 border-white"
+                                class="relative z-10 w-full h-auto rounded-lg shadow-lg border-2 border-white transition-transform duration-500 group-hover:scale-105"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuASWkuTM1nc3xxwQSHkL0wD3S6a_BXq8AzN0U5ZbUUhn69j3XBG9Y5cV2C7LfSWs1TCLoX0lhTVFcXqW7xfsbvtN5TNA71yjXx74fEE-QnE-5MjfY4XqK8nnfSlqC2tiuVfRmnuJEGVmT7yPoJgWERbBCN4YH5jtLCkqWfQogRnxHLEhT_e97d8fq2t2ROn34ICJakxGbZQ4OqZJyUw53IPuP8CIWCchGGO7cgJm1sLsJGWYmzEK4ofQ4mt_MuubobTe8TbuC22efA" />
                         </div>
                     </div>
-                    <div class="order-1 md:order-2">
+                    <div class="order-1 md:order-2 reveal-on-scroll reveal-fade-right">
                         <span class="font-label-lg text-primary uppercase tracking-widest mb-sm block">Professional
                             Excellence</span>
                         <p class="font-body-lg text-on-surface mb-md">
@@ -307,11 +349,15 @@
                 <!-- Row 3: THE HISTORIC MANDATE (2022) -->
                 <div class="py-lg border-b border-surface-container">
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
-                        <div class="md:col-span-4 relative"><img alt="Mayor on Stage"
-                                class="w-full h-auto rounded-xl shadow-lg border-2 border-white object-cover aspect-square"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoConkwynMrkHnCKeOv8htP6AhgoFLvvuCc-U0og_ih8YgtMX3AzrhfDVTV2MoPnlk9s3LtvSf0ZzBktUc2B27PNZrqIEgJbrcOCsCMqSS2yLCOUTy0uU298YxwVZHYAMVt70JxFZMaCDyKFsmBX9lvXjwK6TwwFq8A-o1-7OfqGJLhMDALsqUDA79S35lYiyivQ3QidR-tSDcaejtQbx18QSu5D72oBNxI4coWtxlXE4sUo0mLoHieywesuG1s8IiQ73-SV5SNpw" />
+                        <div class="md:col-span-4 relative reveal-on-scroll reveal-fade-left">
+                            <div class="overflow-hidden rounded-xl shadow-lg border-2 border-white group">
+                                <img alt="Mayor on Stage"
+                                    class="w-full h-auto rounded-xl shadow-lg border-2 border-white object-cover aspect-square transition-transform duration-500 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoConkwynMrkHnCKeOv8htP6AhgoFLvvuCc-U0og_ih8YgtMX3AzrhfDVTV2MoPnlk9s3LtvSf0ZzBktUc2B27PNZrqIEgJbrcOCsCMqSS2yLCOUTy0uU298YxwVZHYAMVt70JxFZMaCDyKFsmBX9lvXjwK6TwwFq8A-o1-7OfqGJLhMDALsqUDA79S35lYiyivQ3QidR-tSDcaejtQbx18QSu5D72oBNxI4coWtxlXE4sUo0mLoHieywesuG1s8IiQ73-SV5SNpw" />
+                            </div>
                         </div>
-                        <div class="md:col-span-5"><span
+                        <div class="md:col-span-5 reveal-on-scroll reveal-fade-up delay-100">
+                            <span
                                 class="font-label-lg text-primary uppercase tracking-widest mb-sm block">The Historic
                                 Mandate (2022)</span>
                             <h3 class="font-headline-md text-on-surface mb-md">Indore's Clear Choice for Progress</h3>
@@ -321,7 +367,7 @@
                                     सिर्फ स्वच्छ नहीं, सबसे आगे रखना है।'</span></p>
                         </div>
                         <div
-                            class="md:col-span-3 bg-on-secondary-fixed text-white p-lg rounded-xl flex flex-col gap-md items-center text-center saffron-glow">
+                            class="md:col-span-3 bg-on-secondary-fixed text-white p-lg rounded-xl flex flex-col gap-md items-center text-center saffron-glow reveal-on-scroll reveal-fade-right delay-200 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
                             <div>
                                 <div class="text-4xl font-bold text-primary-container">5,92,519</div>
                                 <div class="text-xs uppercase tracking-tighter opacity-80">Total Votes Received</div>
@@ -339,7 +385,7 @@
         <!-- Impact: Leadership Milestones & Vision 2030 -->
         <section class="py-xl bg-surface transition-all duration-1000 opacity-100 translate-y-0" id="impact">
             <div class="max-w-container-max mx-auto px-gutter">
-                <div class="text-center mb-xl">
+                <div class="text-center mb-xl reveal-on-scroll reveal-fade-up">
                     <h2 class="font-headline-lg text-headline-lg text-on-background">ऐतिहासिक माइलस्टोन्स और भविष्य का
                         विजन</h2>
                     <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto mt-xs">एक आधुनिक, सक्षम और विकसित
@@ -349,24 +395,24 @@
                 <div
                     class="grid grid-cols-1 md:grid-cols-3 gap-0 mb-xl shadow-xl overflow-hidden rounded-xl border border-outline-variant">
                     <div
-                        class="bg-on-secondary-fixed text-white p-lg flex flex-col items-center text-center border-r border-white/10 group hover:bg-on-secondary-fixed-variant transition-colors">
-                        <div class="text-primary-container font-display-lg text-4xl md:text-5xl mb-xs">5,92,519+</div>
+                        class="reveal-on-scroll reveal-fade-up bg-on-secondary-fixed text-white p-lg flex flex-col items-center text-center border-r border-white/10 group hover:bg-on-secondary-fixed-variant transition-colors">
+                        <div class="text-primary-container font-display-lg text-4xl md:text-5xl mb-xs transition-transform duration-300 group-hover:scale-105">5,92,519+</div>
                         <h4 class="font-label-lg uppercase tracking-wider text-sm mb-sm text-secondary-fixed">मतों का
                             अटूट विश्वास</h4>
                         <p class="font-body-md text-xs opacity-70">लोकतंत्र के इतिहास में इंदौर का अभूतपूर्व समर्थन और
                             आशीर्वाद।</p>
                     </div>
                     <div
-                        class="bg-primary text-white p-lg flex flex-col items-center text-center border-r border-white/10 group hover:bg-primary/90 transition-colors">
-                        <div class="text-primary-fixed font-display-lg text-4xl md:text-5xl mb-xs">₹250+ Crore</div>
+                        class="reveal-on-scroll reveal-fade-up delay-100 bg-primary text-white p-lg flex flex-col items-center text-center border-r border-white/10 group hover:bg-primary/90 transition-colors">
+                        <div class="text-primary-fixed font-display-lg text-4xl md:text-5xl mb-xs transition-transform duration-300 group-hover:scale-105">₹250+ Crore</div>
                         <h4 class="font-label-lg uppercase tracking-wider text-sm mb-sm text-primary-fixed-dim">Public
                             Green Bonds</h4>
                         <p class="font-body-md text-xs opacity-80">नगर निगम द्वारा भारत का सबसे सफल और जन-सहभागिता वाला
                             सौर ऊर्जा निवेश।</p>
                     </div>
                     <div
-                        class="bg-on-secondary-fixed text-white p-lg flex flex-col items-center text-center group hover:bg-on-secondary-fixed-variant transition-colors">
-                        <div class="text-primary-container font-display-lg text-4xl md:text-5xl mb-xs">COP28 UAE</div>
+                        class="reveal-on-scroll reveal-fade-up delay-200 bg-on-secondary-fixed text-white p-lg flex flex-col items-center text-center group hover:bg-on-secondary-fixed-variant transition-colors">
+                        <div class="text-primary-container font-display-lg text-4xl md:text-5xl mb-xs transition-transform duration-300 group-hover:scale-105">COP28 UAE</div>
                         <h4 class="font-label-lg uppercase tracking-wider text-sm mb-sm text-secondary-fixed">
                             Representation</h4>
                         <p class="font-body-md text-xs opacity-70">विश्व पटल पर इंदौर के स्वच्छता और जलवायु मॉडल का डंका
@@ -375,8 +421,8 @@
                 </div>
                 <!-- Step 2: Leadership & Policy -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
-                    <div class="group relative overflow-hidden rounded-xl navy-outline saffron-glow">
-                        <img alt="Meeting with Amit Shah" class="w-full h-80 object-cover transition-all duration-700"
+                    <div class="group relative overflow-hidden rounded-xl navy-outline saffron-glow reveal-on-scroll reveal-fade-left">
+                        <img alt="Meeting with Amit Shah" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuASYH5IdiZgUhRV-JUlwoffISa_tqnBlb7cmd89FyJ6sFYsROkA2CctTuiGu37GLpq_SdkbuqWr2nXoPDuFp27D-frKuD8VxoCuHGTkh2q7mwZGX3XUON4q6xFbRfyypdwOfgqzXlyzam5zpFMAsEG1oZeUHthD1S8cWc2BobtmUbcopGA3Fhleb4SnZsyPxh1ZcxtRHJ1CsymQS-A99fW42DyD_6ialeu7E4MYFh1fBtfFYpAOk7ET9iBfiyxjX11OwhacZRqDJW4" />
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-on-secondary-fixed/90 via-on-secondary-fixed/40 to-transparent flex flex-col justify-end p-lg">
@@ -386,9 +432,9 @@
                                 इंदौर बना आधुनिकता का केंद्र।</p>
                         </div>
                     </div>
-                    <div class="group relative overflow-hidden rounded-xl navy-outline saffron-glow">
+                    <div class="group relative overflow-hidden rounded-xl navy-outline saffron-glow reveal-on-scroll reveal-fade-right">
                         <img alt="Global Leadership Stage"
-                            class="w-full h-80 object-cover group-hover:scale-105 transition-all duration-700"
+                            class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsT6BQZmHlZSSskMmjZ502LUwhTQIGBoRJ1kvIz8wELYF29SR8ML9O-FPJbCqHRTaMowdK08poeKfYJcNPqzyl1Z603Rc5zvnoYYRivamaJZxB_L8jTSEFg_9LjxUb3DcseSG-iAxV_r7OUJJHJqI4M45MPNOMrXt3H3NhdiA6PTON_WAw458h9QBssn6KCaCJnmg4IstaKP6zdPDgwD-sA2K6eM9ejDOuUe9HRMwX1txgFGfIa4aIeYGPXB8YOCWDWivdHjbUZRY" />
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-on-secondary-fixed/90 via-on-secondary-fixed/40 to-transparent flex flex-col justify-end p-lg">
@@ -403,7 +449,7 @@
                 <div class="space-y-xl mb-xl">
                     <!-- Block A: Green Energy -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
-                        <div class="md:col-span-7">
+                        <div class="md:col-span-7 reveal-on-scroll reveal-fade-left">
                             <div class="flex items-center gap-md mb-md">
                                 <div
                                     class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center text-tertiary">
@@ -417,20 +463,24 @@
                                 निगम का खर्च बचा रहा है बल्कि कार्बन फुटप्रिंट भी कम कर रहा है।
                             </p>
                         </div>
-                        <div class="md:col-span-5">
-                            <img alt="Green Bonds Panel"
-                                class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-white"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWd5pOhzKJ8Gmn4ZLc9ZV-js3ViBWp1Y0EU-Ccu7J83w9vhS0xzu8GcormlvO1GMKKPRyzEWxGOPphXQ0U0lcpw8_24Msmfx2ZfVkuH_ZXQhifW_EItDJtT7dv8375mow0Vel7ROtgpa-BqLloK5F5joO6i2QHUQmSqu3pbEbaVfbJ8mjmKbr5TNAWEcWtH7DqN5oGsQASP_ZYYX8rkPIpqJ-M3KjeBIEyPQTJwmKaeXrdmyax4r2Zc-g2fHfI1h8OtrQLBR4J9rg" />
+                        <div class="md:col-span-5 reveal-on-scroll reveal-fade-right">
+                            <div class="overflow-hidden rounded-xl shadow-lg border-2 border-white group">
+                                <img alt="Green Bonds Panel"
+                                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWd5pOhzKJ8Gmn4ZLc9ZV-js3ViBWp1Y0EU-Ccu7J83w9vhS0xzu8GcormlvO1GMKKPRyzEWxGOPphXQ0U0lcpw8_24Msmfx2ZfVkuH_ZXQhifW_EItDJtT7dv8375mow0Vel7ROtgpa-BqLloK5F5joO6i2QHUQmSqu3pbEbaVfbJ8mjmKbr5TNAWEcWtH7DqN5oGsQASP_ZYYX8rkPIpqJ-M3KjeBIEyPQTJwmKaeXrdmyax4r2Zc-g2fHfI1h8OtrQLBR4J9rg" />
+                            </div>
                         </div>
                     </div>
                     <!-- Block B: Mobility -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
-                        <div class="md:col-span-5 order-2 md:order-1">
-                            <img alt="Traffic Review"
-                                class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-white"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB67cHgSoBW6m-v3XUrMtuInwmZRALIKQTqs_k8OGRQ3SuQPEVO2BBEFkRl1_H3ZIQ-EbNUflFBqa3BdkfJBmf4ZGOmrSKW43QM1-Zlke9vzEE63oMSofwAaHwz-EkTcTLH_mLZn7bHQlXnKGhzc4b_HL1XSxKIkouMwNjLAqSFgJs0-O4ShRyGbJdhcfgK5UslawmUh1Gp-O2Cp6ysY1a_nbcMqa6TbP8IXOSfqmxSsy3fm6NLB3CRNQ2g1Y6TM_RJ9zs6j-8oIWQ" />
+                        <div class="md:col-span-5 order-2 md:order-1 reveal-on-scroll reveal-fade-left">
+                            <div class="overflow-hidden rounded-xl shadow-lg border-2 border-white group">
+                                <img alt="Traffic Review"
+                                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB67cHgSoBW6m-v3XUrMtuInwmZRALIKQTqs_k8OGRQ3SuQPEVO2BBEFkRl1_H3ZIQ-EbNUflFBqa3BdkfJBmf4ZGOmrSKW43QM1-Zlke9vzEE63oMSofwAaHwz-EkTcTLH_mLZn7bHQlXnKGhzc4b_HL1XSxKIkouMwNjLAqSFgJs0-O4ShRyGbJdhcfgK5UslawmUh1Gp-O2Cp6ysY1a_nbcMqa6TbP8IXOSfqmxSsy3fm6NLB3CRNQ2g1Y6TM_RJ9zs6j-8oIWQ" />
+                            </div>
                         </div>
-                        <div class="md:col-span-7 order-1 md:order-2">
+                        <div class="md:col-span-7 order-1 md:order-2 reveal-on-scroll reveal-fade-right">
                             <div class="flex items-center gap-md mb-md">
                                 <div
                                     class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
@@ -447,7 +497,7 @@
                     </div>
                     <!-- Block C: Digital Governance -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
-                        <div class="md:col-span-7">
+                        <div class="md:col-span-7 reveal-on-scroll reveal-fade-left">
                             <div class="flex items-center gap-md mb-md">
                                 <div
                                     class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
@@ -460,39 +510,41 @@
                                 सेवाएं मोबाइल पर एक टच की दूरी पर हैं।
                             </p>
                         </div>
-                        <div class="md:col-span-5 relative">
-                            <div class="absolute inset-0 bg-primary/20 rounded-xl mix-blend-overlay"></div>
-                            <img alt="Digital Indore"
-                                class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-white"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMdd5L2Nv-QguooX9-tSWBW1ycK6FFC_XGMOkIO2J93QyXyYQlj7kAq7UuW1Nm8xSdCq2C1BSoxreyTlP-ZjmKaaoIzT5R4OBJ3k-E6ItoJtniBlhwKuN6CDXZyAtnNHSNJOfYb1nGjLon7qB--RXjx_sTrq_0DQI6Q2DEYcFcLk2uJ-jAR3BOQaXWSPi1wo6mhsvnBwLv6SK68Bh1Y0Esf7-Ch3XKy4Qgm3AGz-Wr0WY6GMuPJGr3AkfDeTx_u1ZsioD6e0KCnpU" />
+                        <div class="md:col-span-5 reveal-on-scroll reveal-fade-right">
+                            <div class="relative overflow-hidden rounded-xl shadow-lg border-2 border-white group">
+                                <div class="absolute inset-0 bg-primary/20 rounded-xl mix-blend-overlay z-10 pointer-events-none"></div>
+                                <img alt="Digital Indore"
+                                    class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMdd5L2Nv-QguooX9-tSWBW1ycK6FFC_XGMOkIO2J93QyXyYQlj7kAq7UuW1Nm8xSdCq2C1BSoxreyTlP-ZjmKaaoIzT5R4OBJ3k-E6ItoJtniBlhwKuN6CDXZyAtnNHSNJOfYb1nGjLon7qB--RXjx_sTrq_0DQI6Q2DEYcFcLk2uJ-jAR3BOQaXWSPi1wo6mhsvnBwLv6SK68Bh1Y0Esf7-Ch3XKy4Qgm3AGz-Wr0WY6GMuPJGr3AkfDeTx_u1ZsioD6e0KCnpU" />
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Step 4: Vision 2030 -->
-                <div class="bg-on-secondary-fixed p-xl rounded-2xl relative overflow-hidden">
+                <div class="bg-on-secondary-fixed p-xl rounded-2xl relative overflow-hidden reveal-on-scroll reveal-fade-up">
                     <div class="absolute inset-0 mandala-pattern opacity-5"></div>
                     <div class="relative z-10 text-center mb-lg">
                         <h2 class="font-headline-xxl text-primary-container">Vision 2030: भविष्य का खाका</h2>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-lg relative z-10">
                         <div
-                            class="bg-white/5 border border-white/10 p-lg rounded-xl backdrop-blur-sm group hover:bg-white/10 transition-all">
-                            <span class="material-symbols-outlined text-primary-container text-4xl mb-md">eco</span>
+                            class="bg-white/5 border border-white/10 p-lg rounded-xl backdrop-blur-sm group hover:bg-white/10 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 reveal-on-scroll reveal-fade-up delay-100">
+                            <span class="material-symbols-outlined text-primary-container text-4xl mb-md transition-transform duration-300 group-hover:scale-110">eco</span>
                             <h4 class="font-headline-sm text-white mb-sm">सौर ऊर्जा और पर्यावरण नेतृत्व</h4>
                             <p class="text-white/60 text-sm">2030 तक इंदौर को पूर्णतः सौर संचालित नगर निगम बनाना और
                                 ग्रीन सिटी इंडेक्स में शीर्ष स्थान बनाए रखना।</p>
                         </div>
                         <div
-                            class="bg-white/5 border border-white/10 p-lg rounded-xl backdrop-blur-sm group hover:bg-white/10 transition-all">
+                            class="bg-white/5 border border-white/10 p-lg rounded-xl backdrop-blur-sm group hover:bg-white/10 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 reveal-on-scroll reveal-fade-up delay-200">
                             <span
-                                class="material-symbols-outlined text-primary-container text-4xl mb-md">water_drop</span>
+                                class="material-symbols-outlined text-primary-container text-4xl mb-md transition-transform duration-300 group-hover:scale-110">water_drop</span>
                             <h4 class="font-headline-sm text-white mb-sm">जल सुरक्षा और आधुनिक इंफ्रा</h4>
                             <p class="text-white/60 text-sm">नर्मदा चतुर्थ चरण और शहर की नदियों के पुनर्जीवन के साथ 24x7
                                 जल आपूर्ति सुनिश्चित करना।</p>
                         </div>
                         <div
-                            class="bg-white/5 border border-white/10 p-lg rounded-xl backdrop-blur-sm group hover:bg-white/10 transition-all">
-                            <span class="material-symbols-outlined text-primary-container text-4xl mb-md">school</span>
+                            class="bg-white/5 border border-white/10 p-lg rounded-xl backdrop-blur-sm group hover:bg-white/10 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 reveal-on-scroll reveal-fade-up delay-300">
+                            <span class="material-symbols-outlined text-primary-container text-4xl mb-md transition-transform duration-300 group-hover:scale-110">school</span>
                             <h4 class="font-headline-sm text-white mb-sm">इंटर्नशिप विद मेयर (IWM) एवं कौशल</h4>
                             <p class="text-white/60 text-sm">50,000 युवाओं को प्रशासनिक कार्यों में जोड़कर भविष्य के
                                 कुशल नेतृत्वकर्ता तैयार करना।</p>
@@ -502,7 +554,7 @@
             </div>
         </section>
         <!-- Media Action -->
-        <section class="py-xl bg-[#FBFBFB] overflow-hidden relative" id="gallery-marquee">
+        <section class="py-xl bg-[#FBFBFB] overflow-hidden relative reveal-on-scroll reveal-fade-up" id="gallery-marquee">
             <div class="mb-lg text-center">
                 <h2 class="font-headline-lg text-headline-lg text-on-background">ऑन-ग्राउंड झलकियां</h2>
                 <!-- <p class="font-body-lg text-on-surface-variant">Infinite Gallery Marquee</p> -->
@@ -610,16 +662,16 @@
                 </div>
             </div>
         </section>
-        <section class="py-xl bg-surface-container transition-all duration-1000 opacity-100 translate-y-0" id="media">
+        <section class="py-xl bg-surface-container" id="media">
             <div class="max-w-container-max mx-auto px-gutter">
-                <div class="text-center mb-xl">
+                <div class="text-center mb-xl reveal-on-scroll reveal-fade-up">
                     <h2 class="font-headline-lg text-headline-lg text-on-background">महापौर की बात: संवाद और विचार</h2>
                     <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto">Watch Mayor Pushyamitra Bhargav
                         discuss Indore's development, legal philosophy, and future vision.</p>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
                     <!-- Left Column: Main Theater -->
-                    <div class="lg:col-span-8">
+                    <div class="lg:col-span-8 reveal-on-scroll reveal-fade-left">
                         <div
                             class="rounded-xl overflow-hidden bg-black shadow-[0_10px_30px_-15px_#FF9933] aspect-video relative">
                             <iframe
@@ -636,7 +688,7 @@
                         </div>
                     </div>
                     <!-- Right Column: Interactive Playlist -->
-                    <div class="lg:col-span-4 flex flex-col">
+                    <div class="lg:col-span-4 flex flex-col reveal-on-scroll reveal-fade-right delay-150">
                         <div class="max-h-[500px] lg:max-h-[600px] overflow-y-auto pr-2 space-y-md custom-scrollbar">
                             <div class="video-card cursor-pointer group bg-surface border border-outline-variant p-sm rounded-lg hover:border-primary/50 hover:bg-primary-fixed-dim/10 transition-all active"
                                 data-desc="A deep dive into on-ground development and the administrative execution keeping Indore at the absolute peak."
@@ -759,11 +811,11 @@
             </div>
         </section>
         <!-- Citizen Portal & Direct Connect - REDESIGNED -->
-        <section class="py-xl bg-[#FBFBFB] transition-all duration-1000 opacity-100 translate-y-0" id="connect">
+        <section class="py-xl bg-[#FBFBFB]" id="connect">
             <div class="max-w-container-max mx-auto px-gutter">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-xl items-start">
                     <!-- Form Column (60%) -->
-                    <div class="md:col-span-7">
+                    <div class="md:col-span-7 reveal-on-scroll reveal-fade-left">
                         <div
                             class="bg-white p-lg md:p-xl rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-[#E5E5E5]">
                             <h2 class="font-headline-lg text-headline-lg text-[#1A1C1C] mb-md">आपका विचार, हमारा संकल्प
@@ -813,7 +865,7 @@
                         </div>
                     </div>
                     <!-- Connect Cards Column (40%) -->
-                    <div class="md:col-span-5 flex flex-col gap-lg py-md">
+                    <div class="md:col-span-5 flex flex-col gap-lg py-md reveal-on-scroll reveal-fade-right delay-150">
                         <!-- Item A -->
                         <div class="flex items-start gap-md group">
                             <div class="text-[#FF9933] transition-transform group-hover:scale-110">
@@ -918,23 +970,23 @@
             }
         });
 
-        // Simple Intersection Observer for Fade-in effects
+        // Advanced Intersection Observer for Premium Reveal animations
         const observerOptions = {
-            threshold: 0.1
+            threshold: 0.05,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    entry.target.classList.add('reveal-active');
+                    observer.unobserve(entry.target); // Stop observing once revealed
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-            observer.observe(section);
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            observer.observe(el);
         });
     </script>
     <script>
